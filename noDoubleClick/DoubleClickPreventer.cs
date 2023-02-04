@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace NoDoubleClick
 {
-    class DoubleClickPreventer
+    internal class DoubleClickPreventer
     {
         public long LastClickTime = 0;
         private readonly MouseButtons _mouseButtonType;

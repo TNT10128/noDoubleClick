@@ -21,7 +21,7 @@ namespace NoDoubleClick
             _mouseKeyHook.Dispose();
         }
 
-        private void OnMouseDown(object sender, MouseEventExtArgs e)
+        private static void OnMouseDown(object sender, MouseEventExtArgs e)
         {
             if (!s_mouseButtonsToSuppress.Contains(e.Button)) 
             {

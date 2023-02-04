@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace NoDoubleClick
 {
-    class Program
+    internal class Program
     {
         public const string Name = "noDoubleClick";
 
@@ -19,7 +19,7 @@ namespace NoDoubleClick
         public static readonly DoubleClickPreventer LeftButtonDoubleClickPreventer = new(MouseButtons.Left);
         public static readonly DoubleClickPreventer RightButtonDoubleClickPreventer = new(MouseButtons.Right);
 
-        private static readonly MouseListener _listener = new(); 
+        private static readonly MouseListener s_listener = new(); 
 
         private static void PrintNameAsciiArt()
         {
@@ -30,11 +30,11 @@ namespace NoDoubleClick
 
         private static void InitializeClickListener()
         {
-            _listener.Subscribe();
+            s_listener.Subscribe();
             Logger.LogInformation("Initialized click listener.");
         }
 
-        static void Main()
+        private static void Main()
         {
             PrintNameAsciiArt();
             Logger.LogInformation("Loading {name}...", Name);
